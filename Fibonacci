@@ -1,0 +1,28 @@
+function isFibonacci(number) {
+    // Inicializa os dois primeiros números da sequência Fibonacci
+    let a = 0;
+    let b = 1;
+
+    // Itera até encontrar um número na sequência maior ou igual ao número fornecido
+    while (b < number) {
+        // Calcula o próximo número da sequência Fibonacci
+        let temp = b;
+        b = a + b;
+        a = temp;
+    }
+
+    // Verifica se o número fornecido pertence à sequência Fibonacci
+    if (b === number) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Teste da função com um número fornecido
+const numeroFornecido = 21;
+if (isFibonacci(numeroFornecido)) {
+    console.log(numeroFornecido + " pertence à sequência de Fibonacci.");
+} else {
+    console.log(numeroFornecido + " não pertence à sequência de Fibonacci.");
+}
